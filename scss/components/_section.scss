@@ -1,0 +1,72 @@
+@use "../abstracts";
+
+.section-content {
+    margin-top: 103px;
+}
+
+.section {
+    &__title {
+        display: inline-block;
+        position: relative;
+        color: abstracts.$primary-color-black;
+        @include abstracts.font(abstracts.$font_Poppins, 16px, 500, 1.63);
+        padding-left: 40px;
+
+        &::before {
+            content: "";
+            width: 25px;
+            height: 1px;
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            background-color: abstracts.$primary-color-black;
+        }
+    }
+
+    &-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+
+        &__header {
+            @include abstracts.font(abstracts.$font_Poppins, 42px, 600, 1.24);
+            width: 520px;
+            color: var(--primary-color-black, #152427);
+
+            @include abstracts.mobile {
+                @include abstracts.font(
+                    abstracts.$font_Poppins,
+                    30px,
+                    600,
+                    1.33
+                );
+                min-width: 281px;
+            }
+        }
+
+        &__actions {
+            display: flex;
+            gap: 20px;
+            cursor: pointer;
+        }
+    }
+
+    &__desc {
+        @include abstracts.mobile {
+            @include abstracts.font($font-size: 14px, $line-height: 1.71);
+            max-width: 240px;
+            margin-bottom: 20px;
+        }
+
+        @include abstracts.font(
+            $font-size: 18px,
+            $font-weight: 500,
+            $line-height: 1.56
+        );
+        color: abstracts.$text-color-black-gray;
+        margin-bottom: 42px;
+        width: 341px;
+    }
+}

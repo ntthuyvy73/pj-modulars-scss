@@ -1,0 +1,97 @@
+@use "../abstracts";
+
+.section-process {
+    position: relative;
+    margin-top: 80px;
+    margin-bottom: 150px;
+    @include abstracts.mobile {
+        margin-bottom: 0px;
+    }
+
+    .process-header__img {
+        @include abstracts.mobile {
+            display: none;
+        }
+
+        position: absolute;
+        top: 0;
+        right: 92px;
+        width: 450px;
+        height: 444px;
+        object-fit: cover;
+    }
+
+    .process-list {
+        margin-top: 80px;
+        @include abstracts.mobile {
+            margin-top: 60px;
+        }
+    }
+
+    .process-item {
+        display: flex;
+        align-items: center;
+        min-height: 185px;
+        flex-wrap: wrap;
+        border-bottom: 3px solid transparent;
+        border-image: linear-gradient(
+            0.25turn,
+            rgba(255, 249, 34),
+            rgba(255, 0, 128),
+            rgba(56, 2, 155, 0)
+        );
+        border-image-slice: 1;
+        transition: all 0.25s ease;
+        cursor: pointer;
+
+        &:hover,
+        &:active {
+            border-radius: 33px;
+            background: abstracts.$secondery-color-light-green;
+            border-bottom-width: 0px;
+        }
+
+        &__number {
+            @include abstracts.font("Poppins", 72px, 600, 0.72);
+            color: abstracts.$primary-color-black-green;
+            margin-left: 30px;
+            margin-right: 65px;
+            text-align: left;
+            width: 10%;
+
+            @include abstracts.mobile {
+                @include abstracts.font($font-size: 50px, $line-height: 1.04);
+            }
+        }
+
+        &__name {
+            @include abstracts.font("Poppins", 22px, 600, 1);
+            color: abstracts.$primary-color-black;
+            width: 40%;
+            @include abstracts.mobile {
+                width: auto;
+            }
+        }
+
+        &__name h3 {
+            display: block;
+        }
+
+        &__link {
+            @include abstracts.font("Poppins", 18px, 400, 1);
+            color: abstracts.$text-color-black-gray;
+            margin-top: 22px;
+            text-decoration: underline;
+        }
+
+        &__desc {
+            @include abstracts.font("Public Sans", 18px, 500, 1.56);
+            color: abstracts.$text-color-light-gray;
+            flex: 1;
+            @include abstracts.mobile {
+                @include abstracts.font($font-size: 18px, $line-height: 2);
+                margin: 20px 10px;
+            }
+        }
+    }
+}

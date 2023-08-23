@@ -1,0 +1,45 @@
+@use "../abstracts";
+
+.section-logo {
+    min-height: 201px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    border-radius: 100.5px;
+    background: abstracts.$secondery-color-light-green;
+    margin-top: 42px;
+
+    &__link,
+    &__text {
+        color: abstracts.$primary-color-black-green;
+        @include abstracts.font(
+            $font-size: 31px,
+            $font-weight: 500,
+            $line-height: 0
+        );
+    }
+
+    &__link {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        &:hover {
+            opacity: 0.5;
+        }
+    }
+
+    &__img {
+        @include abstracts.size(40px, 46px);
+        margin-right: 11px;
+    }
+
+    @include abstracts.mobile {
+        border-radius: 30px;
+        padding: 20px 10px;
+        &__link {
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+    }
+}

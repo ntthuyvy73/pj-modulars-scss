@@ -1,0 +1,195 @@
+@use "../abstracts";
+
+.header {
+    min-height: 100vh;
+    margin: 28px auto 0 auto;
+
+    @include abstracts.mobile {
+        min-height: auto;
+    }
+
+    &-top {
+        position: relative;
+        min-height: 57px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        &__line {
+            @include abstracts.mobile {
+                display: none;
+            }
+            @include abstracts.size(100%, 1px);
+
+            background: linear-gradient(
+                18deg,
+                #fff 0%,
+                #dddcdc 51.25%,
+                rgba(212, 212, 212, 0) 100%
+            );
+
+            position: absolute;
+            bottom: -13px;
+            left: 0;
+        }
+    }
+
+    .logo {
+        flex-grow: 1;
+        &_img {
+            @include abstracts.size(146.4px, 26.236px);
+
+            @include abstracts.mobile {
+                @include abstracts.size(85px, 16px);
+            }
+        }
+    }
+}
+
+.navbar {
+    flex-grow: 2;
+    margin-right: 88px;
+    float: right;
+
+    @include abstracts.mobile {
+        display: none;
+    }
+
+    .menu-list {
+        display: flex;
+        justify-content: flex-end;
+        list-style-type: none;
+    }
+
+    .menu-item {
+        padding: 0 19px;
+    }
+
+    &__link--active {
+        position: relative;
+        text-shadow: 1px 0px abstracts.$primary-color-black-green;
+
+        &::before {
+            content: "";
+            position: absolute;
+            bottom: calc(-100% - 13px);
+            display: inline-block;
+            @include abstracts.size(16px, 2px);
+            background: abstracts.$primary-color-black-green;
+        }
+    }
+}
+
+.header-actions {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    &__menu-bars {
+        display: none;
+        margin-left: 30px;
+        @include abstracts.size(16px, 16px);
+    }
+
+    @include abstracts.mobile {
+        justify-content: flex-start;
+        &__signup {
+            @include abstracts.size(92px, 32px);
+            @include abstracts.font(
+                $font-size: 12px,
+                $font-weight: 600,
+                $line-height: 1.17
+            );
+        }
+
+        &__menu-bars {
+            display: block;
+        }
+    }
+}
+
+.header-content {
+    position: relative;
+    display: flex;
+    margin-top: 60px;
+
+    @include abstracts.mobile {
+        display: block;
+        margin-top: 55px;
+    }
+
+    &__title {
+        @include abstracts.mobile {
+            @include abstracts.font($font-size: 30px, $line-height: 1.3);
+            max-width: 233x;
+        }
+        @include abstracts.font(
+            $font-size: 50px,
+            $font-weight: 800,
+            $line-height: 1.2
+        );
+
+        color: abstracts.$primary-color-black;
+        width: 368px;
+        margin-bottom: 20px;
+    }
+
+    &__img {
+        display: flex;
+        position: relative;
+        width: 60%;
+        justify-content: flex-end;
+        margin-right: 0px;
+
+        &::after {
+            @include abstracts.size(340px, 340px);
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 340px;
+            background: #4dbb9a;
+            filter: blur(137px);
+            z-index: -1;
+        }
+
+        img {
+            @include abstracts.size(202px, 466px);
+
+            object-fit: cover;
+            margin: 0 10px;
+            transition: 0.25s ease;
+
+            &:nth-child(2) {
+                margin-top: 137px;
+            }
+
+            &:hover {
+                cursor: pointer;
+                transform: scale(1.1);
+            }
+        }
+
+        @include abstracts.mobile {
+            width: 100%;
+            padding-left: 20px;
+            padding-right: 40px;
+            margin-top: 65px;
+
+            img {
+                @include abstracts.size(calc(100% / 3), calc(100% / 3));
+
+                &:nth-child(2) {
+                    margin-top: 33px;
+                }
+            }
+
+            &::after {
+                @include abstracts.size(205px, 205px);
+                left: auto;
+            }
+        }
+    }
+}

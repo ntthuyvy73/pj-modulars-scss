@@ -1,0 +1,9 @@
+@use "../abstracts";
+
+a {
+    text-decoration: none;
+    color: abstracts.$primary-color-black;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.56;
+}

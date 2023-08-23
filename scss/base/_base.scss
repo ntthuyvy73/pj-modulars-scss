@@ -1,0 +1,36 @@
+@use "../abstracts";
+
+*,
+::after,
+::before {
+    box-sizing: border-box;
+}
+
+* {
+    font-family: "Public Sans", sans-serif;
+}
+
+input,
+textarea,
+button,
+select {
+    font-family: inherit;
+    font-size: inherit;
+}
+
+.container {
+    --margin: 260px;
+    min-width: 1140px;
+    max-width: calc(100% - var(--margin));
+    margin-left: auto;
+    margin-right: auto;
+
+    @include abstracts.mobile {
+        --margin: 20px;
+        min-width: 0;
+    }
+}
+
+.font_Sonsie_One {
+    font-family: "Sonsie One" !important;
+}

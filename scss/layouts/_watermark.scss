@@ -1,0 +1,32 @@
+@use "../abstracts";
+
+.watermark {
+    &__flower,
+    &__path {
+        position: absolute;
+    }
+
+    &__flower {
+        width: 72px;
+        height: 72px;
+        transform: rotate(9.392deg);
+        @include abstracts.position(0, 0, 0, 26%);
+        z-index: 1;
+    }
+
+    &__path {
+        width: 545px;
+        height: 361.174px;
+        @include abstracts.position(0, 0, 0, 50%);
+        transform: translateX(-50%);
+        z-index: 1;
+    }
+
+    &__reverse {
+        transform: rotate(180deg);
+    }
+
+    &__rightbottom {
+        @include abstracts.position(0, 0, 0, -50%);
+    }
+}

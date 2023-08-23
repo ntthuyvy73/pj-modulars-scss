@@ -1,0 +1,149 @@
+@use "../abstracts";
+
+.about {
+    display: flex;
+    margin-top: 160px;
+    margin-bottom: 80px;
+
+    &__img-list {
+        position: relative;
+        display: flex;
+        justify-content: flex-end;
+        flex: 1;
+
+        @include abstracts.mobile {
+            display: none;
+        }
+    }
+
+    &__img {
+        @include abstracts.size(286px, 480px);
+        border-radius: 210px;
+        box-shadow: 0px 4px 234px 11px rgba(59, 137, 71, 0.25);
+        margin-right: 21px;
+        object-fit: fill;
+    }
+
+    &__img:first-child {
+        margin-top: 90px;
+    }
+}
+
+.about-team {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 143px;
+    height: 144px;
+    border-radius: 8px;
+    background: #fff;
+    box-shadow: 0px 7px 54px 0px rgba(154, 154, 154, 0.25);
+    padding: 10px 23px 0 23px;
+
+    &__title {
+        @include abstracts.font(NULL, 14px, 600, 1);
+        color: abstracts.$primary-color-black;
+    }
+
+    &__sub-title,
+    &__text {
+        @include abstracts.font(NULL, 10px, 400, 1.4);
+        color: abstracts.$text-color-black-gray;
+    }
+
+    &__text {
+        &--right {
+            text-align: right;
+        }
+    }
+    &__progress-wrap {
+        .progress__text {
+            @include abstracts.font(NULL, 10px, 500, 1.4);
+            color: abstracts.$primary-color-black;
+        }
+
+        .progress__bar {
+            position: relative;
+            width: 96px;
+            height: 2px;
+            border-radius: 10px;
+            background: #eaeaea;
+
+            &::after {
+                position: absolute;
+                content: "";
+                width: 40%;
+                height: 2px;
+                border-radius: 10px;
+                background: #83a17d;
+            }
+        }
+    }
+
+    &__member-list {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        &--img {
+            display: flex;
+
+            & img {
+                margin-left: -6px;
+                width: 16px;
+                height: 16px;
+                border-radius: 16px;
+                border: 1px solid #fff;
+            }
+        }
+    }
+}
+
+.about__header {
+    margin-bottom: 11px;
+    @include abstracts.mobile {
+        width: 263px;
+    }
+}
+
+.about-content {
+    &__desc {
+        @include abstracts.font("Poppins", 16px, 500, 1.63);
+        color: abstracts.$text-color-light-gray;
+        margin-bottom: 36px;
+    }
+
+    .about-detail {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        column-gap: 24px;
+        margin-top: 38px;
+        padding-bottom: 20px;
+        border-bottom: 1px solid #83a17d;
+
+        &__number {
+            color: abstracts.$primary-color-black;
+            @include abstracts.font(abstracts.$font_Poppins, 42px, 600, 1.24);
+
+            @include abstracts.mobile {
+                &--m-small {
+                    font-size: 26px;
+                    line-height: 2;
+                    font-weight: 600;
+                }
+            }
+        }
+
+        &__text {
+            @include abstracts.font("Poppins", 14px, 500, 1.71);
+            color: abstracts.$text-color-light-gray;
+
+            @include abstracts.mobile {
+                &--m-small {
+                    font-size: 10px;
+                }
+            }
+        }
+    }
+}

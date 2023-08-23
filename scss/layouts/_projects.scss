@@ -1,0 +1,71 @@
+@use "../abstracts";
+
+.section-projects {
+    background-color: abstracts.$primary-color-black-green;
+    padding-bottom: 65px;
+
+    @include abstracts.mobile {
+        margin-top: 50px;
+    }
+
+    .projects {
+        &__header {
+            color: #e7f9f9;
+            @include abstracts.mobile {
+                margin-top: 55px;
+            }
+        }
+
+        &__desc {
+            color: abstracts.$secondery-color-gray;
+            @include abstracts.mobile {
+                font-size: 14px;
+            }
+        }
+
+        &__link {
+            color: #fff;
+        }
+    }
+}
+
+.projects-content {
+    position: relative;
+
+    .projects-video {
+        border-radius: 22px;
+        width: 100%;
+        cursor: pointer;
+        object-fit: cover;
+
+        @include abstracts.mobile {
+            height: 544px;
+        }
+
+        &__play-btn {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 118px;
+            height: 118px;
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            z-index: 1;
+
+            @include abstracts.mobile {
+                width: 98px;
+                height: 98px;
+
+                & svg {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+    }
+}
